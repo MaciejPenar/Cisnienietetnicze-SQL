@@ -1,0 +1,5 @@
+select o.imie, w.opis, p.data_pomiaru
+from osoby o 
+inner join pomiary p on o.id_osoby=p.id_osoby 
+inner join wyniki w on w.id_wyniku=p.id_wyniku
+where data_pomiaru >= '01/05/22'

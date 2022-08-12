@@ -1,0 +1,23 @@
+CREATE TABLE OSOBY
+(
+id_osoby int PRIMARY KEY,
+imie varchar(25) not null,
+płeć varchar(25) not null
+);
+
+Create table WYNIKI
+(
+id_wyniku int PRIMARY KEY,
+opis varchar(50) not null
+);
+
+Create table POMIARY
+(
+id_pomiaru int PRIMARY KEY,
+data_pomiaru date,
+godzina_pomiaru time,
+cisnienie_skurczowe int not null,
+cisnienie_rozkurczowe int not null,
+id_osoby int REFERENCES OSOBY(id_osoby),
+id_wyniku int REFERENCES WYNIKI(id_wyniku)
+);
